@@ -1,486 +1,952 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NUM ADEPA</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      background: #f9f9f9; /* light background */
-      color: #1c1c1c; /* dark text */
-    }
+  <title>NOM ADEPA</title>
 
-    /* Header */
-    header {
-      background: #1c1c1c; /* dark gray/black */
-      color: #fff;
-      padding: 20px 0;
-      text-align: center;
-    }
+  <!-- Standard favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon2_transparent.ico">
 
-    header h1 {
-      margin: 0;
-      font-size: 3rem; /* increased size */
-      font-weight: 900;
-      color: #fff; /* white main heading */
-    }
+  <!-- PNG icons for mobile -->
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon_180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon_192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="favicon_512x512.png">
 
-    header p {
-      margin: 5px 0 0;
-      font-size: 1.2rem;
-      color: #ff8c00; /* orange subheading */
-    }
-
-    /* Navigation */
-    nav {
-      margin-top: 10px;
-    }
-
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #ff8c00; /* orange hover */
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px 0;
-    }
-
-    section {
-      margin-bottom: 40px;
-    }
-
-    /* Underline Animation for Headings */
-    h1, h2 {
-      position: relative;
-      display: inline-block;
-      padding-bottom: 5px;
-      text-align: center;
-    }
-
-    h1::after, h2::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0%;
-      height: 3px;
-      background: #ff8c00; /* orange underline */
-      animation: underline 1.5s forwards;
-    }
-
-    @keyframes underline {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-
-    h2 {
-      color: #1c1c1c;
-    }
-
-    /* Center all section headings */
-    section h2 {
-      text-align: center;
-      font-size: 2rem; /* adjust as needed */
-      margin-bottom: 20px;
-      display: block;
-    }
-
-    /* Menu Grid */
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-
-    .menu-item {
-      background: #fff;
-      border: 2px solid #ff8c00; /* orange border */
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      text-align: center;
-      padding: 15px;
-      transition: transform 0.2s;
-    }
-
-    .menu-item:hover {
-      transform: scale(1.03);
-    }
-
-    .menu-item img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-
-    .menu-item h3 {
-      margin: 10px 0 5px;
-      color: #ff8c00; /* orange titles */
-    }
-
-    /* Footer */
-    footer {
-      background: #1c1c1c;
-      color: #fff;
-      text-align: center;
-      padding: 15px;
-      margin-top: 20px;
-    }
-
-    footer a {
-      color: #ffcc00;
-      text-decoration: none;
-    }
-
-    /* Floating WhatsApp Button */
-    .whatsapp-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      border-radius: 50%;
-      text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.2s;
-    }
-    .whatsapp-float img {
-      width: 35px;
-      height: 35px;
-    }
-    .whatsapp-float:hover {
-      transform: scale(1.1);
-    }
-
-    /* Feedback Floating Button */
-    .feedback-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 90px; /* sits above WhatsApp */
-      right: 20px;
-      background-color: #ff8c00; /* orange */
-      color: #fff;
-      font-size: 22px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      text-decoration: none;
-      transition: transform 0.2s, background-color 0.2s;
-    }
-    .feedback-float:hover {
-      transform: scale(1.1);
-      background-color: #e07b00; /* darker orange on hover */
-    }
-
-    /* TikTok Floating Button */
-    .tiktok-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 160px; /* sits above Feedback & WhatsApp */
-      right: 20px;
-      background: linear-gradient(135deg, #25f4ee, #ff0050);
-      color: #fff;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 3px #999;
-      z-index: 100;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: 0.3s;
-    }
-    .tiktok-float:hover {
-      transform: scale(1.1);
-      opacity: 0.9; 
-    }
-    .tiktok-icon {
-      width: 30px;
-      height: 30px;
-    }
-
-    /* FAQ Section */
-    #faq {
-      margin-top: 40px;
-    }
-
-    .faq-item {
-      background: #fff;
-      border-left: 4px solid #ff8c00;
-      padding: 15px;
-      margin-bottom: 15px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .faq-item h3 {
-      margin: 0 0 5px;
-      color: #ff8c00;
-      font-size: 1.1rem;
-    }
-
-    .faq-item p {
-      margin: 0;
-      color: #333;
-    }
-
-    /* Mobile Optimization */
-@media (max-width: 500px) {
-  header h1 {
-    font-size: 1.8rem; /* smaller heading on phones */
-  }
-
-  header p {
-    font-size: 1rem; /* subheading fits better */
-  }
-
-  nav a {
-    margin: 0 8px;
-    font-size: 0.9rem; /* smaller nav links */
-  }
-
-  .menu-item img {
-    height: 120px; /* shorter images for small screens */
-  }
-
-  section h2 {
-    font-size: 1.5rem; /* headings resize */
-  }
-
-  .whatsapp-float,
-  .feedback-float,
-  .tiktok-float {
-    width: 50px;
-    height: 50px;
-  }
-
-  .whatsapp-float img,
-  .tiktok-icon {
-    width: 25px;
-    height: 25px;
-  }
-
-  .feedback-float {
-    font-size: 18px;
-  }
-}
-
-/* Center Special Offers content */
-#offers .offer-item {
-  text-align: center;
-}
-
-/* Center FAQ answers */
-#faq {
-  text-align: center;
-}
-
-#faq .faq-item {
-  margin-bottom: 20px;
-}
-
-/* Style for special offers section */
-#offers .offer-item h3 {
-  color: #ff8c00; /* same as underline color */
-  margin-bottom: 8px;
-}
-
-  html {
-    scroll-behavior: smooth;
-  }
-</style>
-
-  </style>
+  <!-- Web App manifest -->
+  <link rel="manifest" href="manifest.json">
 </head>
+
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background: #f9f9f9;
+            /* light background */
+            color: #1c1c1c;
+            /* dark text */
+        }
+
+        /* Header */
+        header {
+            background: #1c1c1c;
+            /* dark gray/black */
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            /* increased size */
+            font-weight: 900;
+            color: #fff;
+            /* white main heading */
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.2rem;
+            color: #ff8c00;
+            /* orange subheading */
+        }
+
+        /* Navigation */
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff8c00;
+            /* orange hover */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px 0;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        /* Underline Animation for Headings */
+        h1,
+        h2 {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 5px;
+            text-align: center;
+        }
+
+        h1::after,
+        h2::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0%;
+            height: 3px;
+            background: #ff8c00;
+            /* orange underline */
+            transition: width 1.5s ease;
+        }
+
+        /* This will be added when in view */
+        .animate-underline::after {
+            width: 100%;
+        }
+
+        @keyframes underline {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        h2 {
+            color: #1c1c1c;
+        }
+
+        /* Center all section headings */
+        section h2 {
+            text-align: center;
+            font-size: 2rem;
+            /* adjust as needed */
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        /* Menu Grid */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-item {
+            background: #fff;
+            border: 2px solid #ff8c00;
+            /* orange border */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 15px;
+            transition: transform 0.2s;
+        }
+
+        .menu-item:hover {
+            transform: scale(1.03);
+        }
+
+        .menu-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .menu-item h3 {
+            margin: 10px 0 5px;
+            color: #ff8c00;
+            /* orange titles */
+        }
+
+        /* Footer */
+        footer {
+            background: #1c1c1c;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            border-top: 3px solid #e67300;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        footer.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        footer a {
+            color: #ffcc00;
+            text-decoration: none;
+            margin: 0 5px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s;
+        }
+
+        .whatsapp-float img {
+            width: 35px;
+            height: 35px;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Feedback Floating Button */
+        .feedback-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 90px;
+            /* sits above WhatsApp */
+            right: 20px;
+            background-color: #ff8c00;
+            /* orange */
+            color: #fff;
+            font-size: 22px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .feedback-float img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .feedback-float:hover {
+            transform: scale(1.1);
+            background-color: #e07b00;
+            /* darker orange on hover */
+        }
+
+        /* TikTok Floating Button */
+        .tiktok-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 160px;
+            /* sits above Feedback & WhatsApp */
+            right: 20px;
+            background: linear-gradient(135deg, #25f4ee, #ff0050);
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .tiktok-float:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+
+        .tiktok-icon {
+            width: 30px;
+            height: 30px;
+        }
+
+        /* FAQ Section */
+        #faq {
+            margin-top: 40px;
+        }
+
+        .faq-item {
+            background: #fff;
+            border-left: 4px solid #ff8c00;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-item h3 {
+            margin: 0 0 5px;
+            color: #333;
+            font-size: 1.1rem;
+        }
+
+        .faq-item p {
+            margin: 0;
+            color: #333;
+        }
+
+        /* Container for FAB */
+        .fab-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            cursor: grab;
+            z-index: 9999;
+        }
+
+        .fab-container.dragging {
+            cursor: grabbing;
+        }
+
+        /* Main FAB button */
+        .fab-button {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #ff8c00;
+            color: #fff;
+            font-size: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+            margin-top: 10px;
+        }
+
+        /* Hidden actions */
+        .fab-actions {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: flex-end;
+            margin-bottom: 10px;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+        }
+
+        .fab-container.active .fab-actions {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .fab-container.active .fab-button {
+            transform: rotate(45deg);
+        }
+
+        /* Each action button */
+        .fab-option {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 8px 0;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .fab-option img {
+            width: 28px;
+            height: 28px;
+        }
+
+        /* Show actions when active */
+        .fab-container.active .fab-actions {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .fab-container.active .fab-button {
+            transform: rotate(45deg);
+            /* turns + into x */
+        }
+
+        /* Founder Section */
+        #founder {
+            margin: 40px 0;
+        }
+
+        #founder h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .founder-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            /* space between image and text */
+            max-width: 500px;
+            margin: auto;
+            flex-wrap: wrap;
+            /* allows wrapping on small screens */
+        }
+
+        .founder-container img {
+            width: 500px;
+            height: auto;
+            border-radius: 50%;
+            /* circular image */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            flex-shrink: 0;
+            /* prevents image from shrinking too much */
+        }
+
+        .founder-container p {
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.5;
+            flex: 1;
+            /* text takes remaining space */
+        }
+
+        /* Responsive: stacked on small screens */
+        @media (max-width: 600px) {
+            .founder-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .founder-container p {
+                margin-top: 10px;
+            }
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 500px) {
+            header h1 {
+                font-size: 1.8rem;
+                /* smaller heading on phones */
+            }
+
+            header p {
+                font-size: 1rem;
+                /* subheading fits better */
+            }
+
+            nav a {
+                margin: 0 8px;
+                font-size: 0.9rem;
+                /* smaller nav links */
+            }
+
+            .menu-item img {
+                height: 120px;
+                /* shorter images for small screens */
+            }
+
+            section h2 {
+                font-size: 1.5rem;
+                /* headings resize */
+            }
+
+            .whatsapp-float,
+            .feedback-float,
+            .tiktok-float {
+                width: 50px;
+                height: 50px;
+            }
+
+            .whatsapp-float img,
+            .tiktok-icon {
+                width: 25px;
+                height: 25px;
+            }
+
+            .feedback-float {
+                font-size: 18px;
+            }
+        }
+
+        /* Center Special Offers content */
+        #offers .offer-item {
+            text-align: center;
+        }
+
+        /* Center FAQ answers */
+        #faq {
+            text-align: center;
+        }
+
+        #faq .faq-item {
+            margin-bottom: 20px;
+        }
+
+        /* Style for special offers section */
+        #offers .offer-item h3 {
+            color: #333;
+            /* same as underline color */
+            margin-bottom: 8px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Founder Section */
+        #founder {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        #founder h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .founder-container {
+            display: flex;
+            flex-direction: column;
+            /* stacks image above text */
+            align-items: center;
+            gap: 15px;
+            /* space between image and text */
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .founder-container img {
+            width: 250px;
+            /* founder image size */
+            height: auto;
+            border-radius: 50%;
+            /* makes image circular */
+            border: 4px solid #ff8c00;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .founder-container p {
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        /* Flyer Section */
+          .flyer {
+            opacity: 0;
+            transform: translateX(-150px) scale(0.9); /* start off to the left */
+            transition: all 0.9s ease-out;
+        }
+
+          .flyer.show {
+            opacity: 1;
+            transform: translateX(0) scale(1); /* slide into original position */
+        }
+
+        #flyer h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Flyer container */
+        .flyer-container {
+            max-width: 300px;
+            /* maximum width */
+            width: 80%;
+            /* scales down on smaller screens */
+            margin: auto;
+            /* centers it */
+        }
+
+        .flyer-container img {
+            width: 100%;
+            /* fills container */
+            height: auto;
+            /* keeps aspect ratio */
+            border-radius: 10px;
+            border: 4px solid #ff8c00;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: block;
+        }
+
+        /* Floating Action Button Options */
+        .fab-option.whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 12px #25d366;
+        }
+
+        .fab-option.feedback:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 12px #ff8c00;
+        }
+
+        .fab-option.tiktok:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 12px #ff8c00;
+            /* TikTok accent pink */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
 <body>
-  <header>
-    <h1>NUM ADEPA SNACKS</h1>
-    <p>Because Your Health Matters ! !</p>
-    <nav>
-      <a href="#menu">Menu</a>
-      <a href="#about">About</a>
-      <a href="#contact">Order</a>
-      <a href="#location">Location</a>
-    </nav>
-  </header>
+    <header>
+        <h1>N0M ADEPA SNACKS</h1>
+        <p>Because Your Health Matters ! !</p>
+        <nav>
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+            <a href="#contact">Order</a>
+            <a href="#location">Location</a>
+        </nav>
+    </header>
 
-  <div class="container">
-    <section id="menu">
-      <h2>Our Menu</h2>
-      <div class="menu-grid">
-        
-        <!-- Sobolo -->
-        <div class="menu-item">
-          <img src="Soboloo.jpg" alt="Sobolo">
-          <h3>Sobolo</h3>
-          <p>Refreshing hibiscus drink.</p>
-          <ul style="list-style:none; padding:0; margin:0;">
-            <li><strong>Small:</strong> GHS 5</li>
-            <li><strong>Large:</strong> GHS 8</li>
-          </ul>
+    <div class="container">
+        <section id="menu">
+            <h2>Our Menu</h2>
+            <div class="menu-grid">
+
+                <!-- Sobolo -->
+                <div class="menu-item">
+                    <img src="Soboloo.jpg" alt="Sobolo">
+                    <h3>Sobolo</h3>
+                    <p>Refreshing hibiscus drink.</p>
+                    <ul style="list-style:none; padding:0; margin:0;">
+                        <li><strong>Small:</strong> GHS 6</li>
+                        <li><strong>Large:</strong> GHS 10</li>
+                    </ul>
+                </div>
+
+                <!-- Samosa -->
+                <div class="menu-item">
+                    <img src="Samosa.jpg" alt="Samosa">
+                    <h3>Samosa</h3>
+                    <p>Crispy snack with spiced filling.</p>
+                    <ul style="list-style:none; padding:0; margin:0;">
+                        <li><strong>Frozen:</strong> GHS 10</li>
+                        <li><strong>Fried:</strong> GHS 15</li>
+                    </ul>
+                </div>
+
+                <!-- Spring Rolls -->
+                <div class="menu-item">
+                    <img src="Springroll.jpg" alt="Spring Rolls">
+                    <h3>Spring Rolls</h3>
+                    <p>Golden rolls packed with flavor.</p>
+                    <ul style="list-style:none; padding:0; margin:0;">
+                        <li><strong>Frozen:</strong> GHS 10</li>
+                        <li><strong>Fried:</strong> GHS 15</li>
+                    </ul>
+                </div>
+
+                <!-- Ice Kenkey -->
+                <div class="menu-item">
+                    <img src="Ice-Kenkey.jpg" alt="Ice Kenkey">
+                    <h3>Ice Kenkey</h3>
+                    <p>Sweet chilled kenkey drink.</p>
+                    <ul style="list-style:none; padding:0; margin:0;">
+                        <li><strong>Small:</strong> GHS 5</li>
+                        <li><strong>Large:</strong> GHS 8</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>
+                At <strong>Nom Adepa Snacks</strong>, we believe food should be both
+                refreshing and satisfying. What started as a passion for homemade Sobolo
+                has grown into a full menu of tasty snacks and drinks, prepared with care
+                and served with love.
+            </p>
+            <p>
+                Our signature Sobolo comes in different sizes to suit every craving, while
+                our samosas and spring rolls are made fresh and served either fried for
+                instant enjoyment or frozen for you to take home and prepare later.
+                And when it comes to cooling off, nothing beats our sweet Ice Kenkey.
+            </p>
+            <p>
+                We are committed to using quality ingredients, keeping our snacks affordable,
+                and delivering the same homemade taste that makes every bite feel special.
+                Whether you’re grabbing a quick refreshment or catering for an event,
+                <strong>Nom Adepa Snacks</strong> has you covered.
+            </p>
+            <p><em>Order now and taste the difference!</em></p>
+        </section>
+
+        <section id="founder">
+            <h2>Meet Our Founder</h2>
+            <div class="founder-container">
+                <img src="founder.jpg" alt="Founder of Nom Adepa Snacks">
+                <p>
+                    <strong>Augustina Adorbli</strong> is the heart and soul behind Nom Adepa Snacks.
+                    A passionate entrepreneur and graduate, she started this venture to bring refreshing and homemade
+                    snacks to her community.
+                    With dedication, care, and a love for quality ingredients, Augustina ensures every product delights
+                    the taste buds while keeping health in mind.
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Order Now</h2>
+            <p>Call/WhatsApp us on <a href="tel:+233596058060">+233 59 605 8060</a></p>
+            <p>Or message us on <a href="https://wa.me/233596058060" target="_blank">WhatsApp</a></p>
+        </section>
+
+        <section id="location">
+            <h2>Our Location</h2>
+            <p>We are located at <strong>Ogbojo New Market</strong>.</p>
+            <p>
+                <a href="https://www.google.com/maps?q=Accra,Ghana" target="_blank">
+                    📍 Find us on Google Maps
+                </a>
+            </p>
+        </section>
+    </div>
+
+    <!-- Special Offers Section -->
+    <section id="offers">
+        <h2>Special Offers & Promotions</h2>
+
+        <div class="offer-item">
+            <h3>Sobolo Bulk Discount</h3>
+            <p>Buy 20 or more bottles of Sobolo (GHS 10 each) and enjoy a discounted price of <strong>GHS 8 per
+                    bottle</strong>. Perfect for events and bulk orders!</p>
         </div>
 
-        <!-- Samosa -->
-        <div class="menu-item">
-          <img src="Samosa.jpg" alt="Samosa">
-          <h3>Samosa</h3>
-          <p>Crispy snack with spiced filling.</p>
-          <ul style="list-style:none; padding:0; margin:0;">
-            <li><strong>Frozen:</strong> GHS 10</li>
-            <li><strong>Fried:</strong> GHS 15</li>
-          </ul>
+
+        <div class="offer-item">
+            <h3>Snack Combo Deal</h3>
+            <p>Enjoy 5 crispy samosas + 5 spring rolls at a discounted price. Perfect for parties and gatherings!</p>
         </div>
 
-        <!-- Spring Rolls -->
-        <div class="menu-item">
-          <img src="Springroll.jpg" alt="Spring Rolls">
-          <h3>Spring Rolls</h3>
-          <p>Golden rolls packed with flavor.</p>
-          <ul style="list-style:none; padding:0; margin:0;">
-            <li><strong>Frozen:</strong> GHS 10</li>
-            <li><strong>Fried:</strong> GHS 15</li>
-          </ul>
+        <div class="offer-item">
+            <h3>Birthday Treat</h3>
+            <p>Order with us on your birthday and get a FREE mini snack pack as our gift to you.</p>
         </div>
-
-        <!-- Ice Kenkey -->
-        <div class="menu-item">
-          <img src="Ice Kenkey.jpg" alt="Ice Kenkey">
-          <h3>Ice Kenkey</h3>
-          <p>Sweet chilled kenkey drink.</p>
-          <ul style="list-style:none; padding:0; margin:0;">
-            <li><strong>Small:</strong> GHS 5</li>
-            <li><strong>Large:</strong> GHS 8</li>
-          </ul>
-        </div>
-
-      </div>
     </section>
 
-    <section id="about">
-      <h2>About Us</h2>
-      <p>
-        At <strong>Num Adepa Snacks</strong>, we believe food should be both 
-        refreshing and satisfying. What started as a passion for homemade Sobolo 
-        has grown into a full menu of tasty snacks and drinks, prepared with care 
-        and served with love.
-      </p>
-      <p>
-        Our signature Sobolo comes in different sizes to suit every craving, while 
-        our samosas and spring rolls are made fresh and served either fried for 
-        instant enjoyment or frozen for you to take home and prepare later. 
-        And when it comes to cooling off, nothing beats our sweet Ice Kenkey.
-      </p>
-      <p>
-        We are committed to using quality ingredients, keeping our snacks affordable, 
-        and delivering the same homemade taste that makes every bite feel special. 
-        Whether you’re grabbing a quick refreshment or catering for an event, 
-        <strong>Num Adepa Snacks</strong> has you covered.
-      </p>
-      <p><em>Order now and taste the difference!</em></p>
+    <section id="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>Do you offer delivery?</h3>
+            <p>Yes! We deliver within Accra. Delivery charges may apply depending on your location.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>How can I place an order?</h3>
+            <p>You can order directly through WhatsApp using the green button below, or call us at <a
+                    href="tel:+233596058060">+233 59 605 8060</a>.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>Do you sell frozen snacks?</h3>
+            <p>Yes, we sell both fried and frozen versions of our samosas and spring rolls.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>What payment methods do you accept?</h3>
+            <p>We accept cash on delivery and Mobile Money (MoMo) payments.</p>
+        </div>
     </section>
 
-    <section id="contact">
-      <h2>Order Now</h2>
-      <p>Call/WhatsApp us on <a href="tel:+233596058060">+233 59 605 8060</a></p>
-      <p>Or message us on <a href="https://wa.me/233596058060" target="_blank">WhatsApp</a></p>
+    <section id="flyer">
+        <h2>Our Latest Flyer</h2>
+        <div class="flyer-container">
+            <img src="flyer.jpg" alt="Num Adepa Snacks Flyer" class="flyer">
+        </div>
     </section>
 
-    <section id="location">
-      <h2>Our Location</h2>
-      <p>We are located at <strong>Ogbojo New Market</strong>.</p>
-      <p>
-        <a href="https://www.google.com/maps?q=Accra,Ghana" target="_blank">
-          📍 Find us on Google Maps
+    <footer>
+        <p>
+            &copy; 2025 <strong>Sobolo & Snacks</strong> | Because Your Health Matters!!
+            <span style="color: #ff8c00;">❤️</span>
+        </p>
+        <p>
+            Follow us on:
+            <a href="https://wa.me/233596058060" target="_blank">WhatsApp</a> |
+            <a href="https://www.tiktok.com/@augustina.adorbli" target="_blank">TikTok</a>
+        </p>
+    </footer>
+
+
+    <!-- Floating Button Menu -->
+    <div class="fab-container">
+        <!-- Main toggle button -->
+        <div class="fab-button">+</div>
+
+        <!-- WhatsApp Floating Button -->
+        <div class="fab-actions">
+            <a href="https://wa.me/233596058060?text=Hello%20Nom%20Adepa%20Snacks,%20I’d%20like%20to%20place%20an%20order!"
+                target="_blank" class="fab-option whatsapp">
+                <img src="WhatsApp.png" alt="WhatsApp">
+            </a>
+
+            <!-- Feedback Floating Button -->
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScbOuKthKOUNDPKuBfJZ4OTr5tDmt_KmpZcPlRediMW9mdIsQ/viewform?usp=header"
+                target="_blank" class="fab-option feedback">
+                <img src="feedback.png" alt="Feedback">
+            </a>
+
+            <!-- TikTok Floating Button -->
+            <a href="https://www.tiktok.com/@augustina.adorbli" target="_blank" class="fab-option tiktok">
+            <img src="Tiktok.png" alt="TikTok">
         </a>
-      </p>
-    </section>
-  </div>
-   
-  <!-- Special Offers Section -->
-<section id="offers">
-  <h2>Special Offers & Promotions</h2>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Select the container and button
+    const fabContainer = document.querySelector(".fab-container");
+    const fabButton = document.querySelector(".fab-button");
 
-  <div class="offer-item">
-    <h3>Buy 2 Sobolo, Get 1 Free</h3>
-    <p>Cool off with our refreshing Sobolo! For every 2 bottles you buy, you get 1 FREE. Limited time offer.</p>
-  </div>
+    // Toggle active state
+    fabButton.addEventListener("click", () => {
+      fabContainer.classList.toggle("active");
+    });
 
-  <div class="offer-item">
-    <h3>Snack Combo Deal</h3>
-    <p>Enjoy 5 crispy samosas + 5 spring rolls at a discounted price. Perfect for parties and gatherings!</p>
-  </div>
+    // Animate headings on scroll
+    const headings = document.querySelectorAll("h1, h2");
+    const headingObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-underline");
+        }
+      });
+    }, { threshold: 0.5 });
+    headings.forEach(h => headingObserver.observe(h));
 
-  <div class="offer-item">
-    <h3>Birthday Treat</h3>
-    <p>Order with us on your birthday and get a FREE mini snack pack as our gift to you.</p>
-  </div>
-</section>
+    // Animate footer on scroll
+    const footer = document.querySelector("footer");
+    const footerObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          footer.classList.add("show");
+        } else {
+          footer.classList.remove("show"); // reset so it animates again
+        }
+      });
+    }, { threshold: 0.3 });
+    footerObserver.observe(footer);
 
-  <section id="faq">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <h3>Do you offer delivery?</h3>
-      <p>Yes! We deliver within Accra. Delivery charges may apply depending on your location.</p>
-    </div>
+    // Draggable floating button (works on PC + Phone)
+    let isDragging = false;
+    let offsetX, offsetY;
 
-    <div class="faq-item">
-      <h3>How can I place an order?</h3>
-      <p>You can order directly through WhatsApp using the green button below, or call us at <a href="tel:+233596058060">+233 59 605 8060</a>.</p>
-    </div>
+    // Mouse events
+    fabContainer.addEventListener("mousedown", (e) => {
+      isDragging = true;
+      offsetX = e.clientX - fabContainer.getBoundingClientRect().left;
+      offsetY = e.clientY - fabContainer.getBoundingClientRect().top;
+      document.body.style.userSelect = "none";
+    });
 
-    <div class="faq-item">
-      <h3>Do you sell frozen snacks?</h3>
-      <p>Yes, we sell both fried and frozen versions of our samosas and spring rolls.</p>
-    </div>
+    document.addEventListener("mousemove", (e) => {
+      if (isDragging) {
+        fabContainer.style.left = `${e.clientX - offsetX}px`;
+        fabContainer.style.top = `${e.clientY - offsetY}px`;
+        fabContainer.style.bottom = "auto";
+        fabContainer.style.right = "auto";
+      }
+    });
 
-    <div class="faq-item">
-      <h3>What payment methods do you accept?</h3>
-      <p>We accept cash on delivery and Mobile Money (MoMo) payments.</p>
-    </div>
-  </section>
+    document.addEventListener("mouseup", () => {
+      isDragging = false;
+      document.body.style.userSelect = "auto";
+    });
 
-  <footer>
-    <p>&copy; 2025 Sobolo & Snacks | Built with Love in Ghana</p>
-  </footer>
+    // Touch events
+    fabContainer.addEventListener("touchstart", (e) => {
+      isDragging = true;
+      const touch = e.touches[0];
+      offsetX = touch.clientX - fabContainer.getBoundingClientRect().left;
+      offsetY = touch.clientY - fabContainer.getBoundingClientRect().top;
+    }, { passive: false }); // allow preventDefault
 
-  <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/233596058060?text=Hello%20Nom%20Adepa%20Snacks,%20I’d%20like%20to%20place%20an%20order!" 
-     class="whatsapp-float" target="_blank">
-    <img src="WhatsApp.png" alt="WhatsApp">
-  </a>
+    document.addEventListener("touchmove", (e) => {
+      if (isDragging) {
+        const touch = e.touches[0];
+        fabContainer.style.left = `${touch.clientX - offsetX}px`;
+        fabContainer.style.top = `${touch.clientY - offsetY}px`;
+        fabContainer.style.bottom = "auto";
+        fabContainer.style.right = "auto";
+      }
+    }, { passive: false }); // allow preventDefault
 
-  <!-- Feedback Floating Button -->
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLScbOuKthKOUNDPKuBfJZ4OTr5tDmt_KmpZcPlRediMW9mdIsQ/viewform?usp=header"
-     class="feedback-float" target="_blank" title="Give Feedback">
-    📝
-  </a>
+    document.addEventListener("touchend", () => {
+      isDragging = false;
+    });
 
-  <!-- TikTok Floating Button -->
-  <a href="https://www.tiktok.com/@augustina.adorbli" target="_blank" class="tiktok-float">
-    <img src="Tiktok.png" alt="TikTok" class="tiktok-icon">
-  </a>
+    // Animate flyer on scroll (like footer)
+    const flyer = document.querySelector(".flyer");
+    if (flyer) {
+      const flyerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            flyer.classList.add("show");
+          } else {
+            flyer.classList.remove("show"); // reset when out of view
+          }
+        });
+      }, { threshold: 0.3 });
+
+      flyerObserver.observe(flyer);
+    }
+
+    // Remove hash (#...) from URL on reload
+    if (window.location.hash) {
+      history.replaceState(null, null, window.location.pathname + window.location.search);
+    }
+
+    // Always scroll to top on refresh
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    };
+  });
+</script>
+
+
 </body>
 </html>
